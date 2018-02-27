@@ -1,19 +1,25 @@
-body{
-  font-family: "Helvetica";
-  text-align: center;
-  padding: 50px 20px 0;
-  background: #f4f4f7;
-  color: #444;
+@font-face {
+  font-family: 'UbuntuMono-R';
+  src: url(fonts/UbuntuMono-R.ttf);
+}
+
+@console-bg: #111;
+@console-text: #8F8;
+
+body {
+  background: @console-bg + #111;
   margin: 0;
 }
 
-h1{
-  font-size: 65px;
-  line-height: 1.2em;
-  border-bottom: #CCC solid 1px;
-  padding: 20px 0;
-}
+#console {
+  font-family: 'UbuntuMono-R';
+  font-size: 120%;
+  padding: 1%;
+  background: @console-bg;
+  color: @console-text;
 
-h3{
-  font-weight: 300;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform: translate(50%, 0%)
 }

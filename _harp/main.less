@@ -1,3 +1,5 @@
+@import 'styles/devices.less';
+
 @font-face {
   font-family: 'UbuntuMono-R';
   src: url(fonts/UbuntuMono-R.ttf);
@@ -18,8 +20,15 @@ body {
   background: @console-bg;
   color: @console-text;
 
+  display: flex;
+  flex-direction: column-reverse;
   position: absolute;
-  width: 50%;
-  height: 50%;
-  transform: translate(50%, 0%)
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.console-line {
+  background: transparent;
 }

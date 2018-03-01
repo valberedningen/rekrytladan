@@ -1,8 +1,25 @@
-let line1 = new Line({
-    id: 0,
-    text: 'Hello, world!',
-})
-let line2 = new Line({
-    id: 1,
-    text: 'Hello, world again!',
-})
+let lines = []
+let data
+
+let urlParams = getAllUrlParams()
+loadJSON(
+    'resources',
+    'spray.json',
+    (json) => {
+        data = JSON.parse(json)
+        console.log(data)
+});
+
+function nextLine() {
+    lines.push(new Line({
+        id: lines.length,
+        text: 'Hello, world ' + lines.length + '!',
+        onComplete: () => {
+            setTimeout(() => {
+                nextLine()
+            }, 1000)
+        }
+    }))
+}
+
+nextLine()

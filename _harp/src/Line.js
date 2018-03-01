@@ -4,21 +4,21 @@ class Line {
         this.text = options.text || ''
         this.id = 'line-' + (options.id | 0)
         this.class = 'console-line'
-        this.onComplete = options.onComplete || function() {}
+        this.onComplete = options.onComplete
 
         this.consoleElement = document.getElementById('console')
 
         this.element = document.createElement('div')
         this.element.id = this.id
         this.element.className = this.class
-        this.consoleElement.appendChild(this.element)
+        this.consoleElement.insertBefore(this.element, this.consoleElement.firstChild)
         
-        let searchElem = '#' + this.id
         if (!this.prompt && this.text !== '') {
-            this.typed = new Typed(searchElem, {
+            this.typed = new Typed('#' + this.id, {
                 strings: [ this.text ],
-                typeSpeed: 30,
+                typeSpeed: 40,
                 showCursor: false,
+                onComplete: options.onComplete || (() => {}),
             })
         }
     }

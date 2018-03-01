@@ -9,13 +9,13 @@
 @console-text: #8F8;
 
 body {
-  background: @console-bg + #111;
+  background: @console-bg;
   margin: 0;
 }
 
 #console {
   font-family: 'UbuntuMono-R';
-  font-size: 500%;
+  font-size: 300%;
   padding: 1%;
   background: @console-bg;
   color: @console-text;
@@ -26,9 +26,19 @@ body {
   left: 0%;
   right: 0%;
   top: 0%;
-  bottom: 0%;
+  bottom: 50%;
 }
 
 .console-line {
   background: transparent;
+  text-align: center;
+  padding-top: 20pt;
+}
+
+.blue-pill {
+    color: #08F;
+}
+
+.red-pill {
+    color: #F44;
 }

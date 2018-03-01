@@ -4,7 +4,7 @@ class Line {
         this.text = options.text || ''
         this.id = 'line-' + (options.id | 0)
         this.class = 'console-line'
-        this.onComplete = options.onComplete || function() {}
+        this.onComplete = options.onComplete
 
         this.consoleElement = document.getElementById('console')
 
@@ -16,9 +16,9 @@ class Line {
         if (!this.prompt && this.text !== '') {
             this.typed = new Typed('#' + this.id, {
                 strings: [ this.text ],
-                typeSpeed: 30,
+                typeSpeed: 40,
                 showCursor: false,
-                onComplete: options.onComplete,
+                onComplete: options.onComplete || (() => {}),
             })
         }
     }

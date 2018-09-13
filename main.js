@@ -1,22 +1,7 @@
 let lines = []
 let patt = new RegExp('@{(\\w*)}', 'g')
 let sequence
-let data
-
-let urlParams = getAllUrlParams()
-
-if (!urlParams.id) {
-    lines.push(new Line({
-        id: lines.length,
-        text: "You're not welcome here..."
-    }))
-}
-
-function fixText(text) {
-    return text.replace(patt, (x) => {
-        return data[x.replace(patt, '$1')]
-    });
-}
+let thing
 
 function nextLine() {
     let id = lines.length
@@ -24,7 +9,7 @@ function nextLine() {
 
     lines.push(new Line({
         id: id,
-        text: fixText(sequence[id]),
+        text: sequence[id].replace(patt, thing),
         onComplete: () => {
             nextLine()
         }
@@ -34,7 +19,8 @@ function nextLine() {
 loadJSON((json) => {
     sequence = JSON.parse(json)
     loadJSON((json) => {
-        data = JSON.parse(json)
+        var things = JSON.parse(json)
+        thing = things[Math.floor(Math.random() * things.length)]
         nextLine()
-    }, 'resources/' + hex2a(urlParams.id) + '.json');
+    }, 'resources/things.json');
 }, 'resources/sequence.json')

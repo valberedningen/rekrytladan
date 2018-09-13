@@ -1,1 +1,43 @@
-@font-face{font-family:'UbuntuMono-R';src:url(fonts/UbuntuMono-R.ttf)}body{background:#111;margin:0}#console{font-family:'UbuntuMono-R';font-size:100%;padding:1%;background:#111;color:#8F8;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;position:absolute;left:0%;right:0%;top:0%;bottom:50%}.console-line{background:transparent;text-align:center;padding-top:20pt}.blue-pill{color:#08F}.red-pill{color:#F44}
+@font-face {
+    font-family: 'UbuntuMono-R';
+    src: url(fonts/UbuntuMono-R.ttf)
+}
+
+body {
+    background: #111;
+    margin: 0
+}
+
+#console {
+    font-family: 'UbuntuMono-R';
+    font-size: 100%;
+    padding: 1%;
+    background: #111;
+    color: #8F8;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 50%
+}
+
+.console-line {
+    background: transparent;
+    text-align: center;
+    padding-top: 20pt
+}
+
+.blue-pill {
+    color: #08F
+}
+
+.red-pill {
+    color: #F44
+}
